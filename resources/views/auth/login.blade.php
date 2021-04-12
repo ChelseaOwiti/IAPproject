@@ -14,9 +14,9 @@
            <h4>Login</h4><hr>
            <form action="{{ route('check') }}" method="post">
              
-             @if(session('unsuccesful'))
+             @if(session('unnsuccesful'))
                <div class="alert alert-danger">
-                  {{ session('unsuccesful') }}
+                  {{ session('unnsuccesful') }}
                </div>
             @endif
   

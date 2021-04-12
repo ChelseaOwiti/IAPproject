@@ -11,11 +11,12 @@ class MainController extends Controller
     function login(){
         return view('auth.login');
     }
+
     function register(){
         return view('auth.register');
     }
+
     function save(Request $request){
-        
 
         //Validate request
         $request->validate([
@@ -32,10 +33,10 @@ class MainController extends Controller
         $save = $admin->save();
 
         if($save){
-            return back()->with('success' ,'User succesfully added');
+            return back()->with('success', 'Success! User succesfully added');
 
         }else{
-            return back()->with('fail', 'something went wrong try again');
+            return back()->with('fail', 'Failed, something went wrong try again');
         }
 
     }
@@ -47,9 +48,10 @@ class MainController extends Controller
        ]);
        $userInfo = Admin::where('email','=', $request->email)->first();
 
-       if(!$userInfo){
-        return back()->with('unnsuccesful','We do not recognize your email address');
-        }else{
+        if(!$userInfo){
+            return back()->with('unnsuccesful','We do not recognize your email address');
+        }
+        else{
         //check password
             if(Hash::check($request->password, $userInfo->password)){
                 $request->session()->put('LoggedUser', $userInfo->id);
@@ -60,10 +62,12 @@ class MainController extends Controller
 
         }
     }
+
     function dashboard(){
         $data = ['LoggedUserInfo'=>Admin::where('id','=', session('LoggedUser'))->first()];
         return view('admin.dashboard', $data);
     }
+
     function logout(){
         if(session()->has('LoggedUser')){
             session()->pull('LoggedUser');
