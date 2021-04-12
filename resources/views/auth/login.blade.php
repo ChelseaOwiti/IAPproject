@@ -14,9 +14,9 @@
            <h4>Login</h4><hr>
            <form action="{{ route('auth.check') }}" method="post">
              
-             @if(Session::get('fail'))
+             @if(session('unnsuccesful'))
                <div class="alert alert-danger">
-                  {{ Session::get('fail') }}
+                  {{ session('unnsuccesful') }}
                </div>
             @endif
   

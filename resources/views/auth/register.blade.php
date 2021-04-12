@@ -13,15 +13,15 @@
       <div class="col-md-4 col-md-offset-4">
            <h4>Register</h4><hr>
            <form action="{{ route('auth.save') }}" method="post">
-             @if(Session::get('success'))
+             @if(session('success'))
               <div class="alert alert-success">
-                {{ Session::get('success')}}
+                {{ session('success')}}
               </div>
              @endif
             
-             @if(Session::get('fail'))
+             @if(session('fail'))
                <div class="alert alert-danger">
-                  {{ Session::get('fail') }}
+                  {{ session('fail') }}
                </div>
             @endif
   
