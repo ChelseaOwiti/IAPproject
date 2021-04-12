@@ -21,7 +21,8 @@ Route::get('/', function () {
 
 
 Route::post('/auth/save',[MainController::class, 'save'])->name('auth.save');
-Route::post('/auth/check',[MainController::class, 'check'])->name('auth.check');
+Route::post('/auth/check',[MainController::class, 'check'])->name('check');
+// Route::post('login', [ 'as' => 'login', 'uses' => 'MainController@do']);
 
 
 Route::get('/auth/logout',[MainController::class, 'logout'])->name('auth.logout');

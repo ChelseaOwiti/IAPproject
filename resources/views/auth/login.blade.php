@@ -12,11 +12,11 @@
   <div class="row" style="margin-top:45px">
       <div class="col-md-4 col-md-offset-4">
            <h4>Login</h4><hr>
-           <form action="{{ route('auth.check') }}" method="post">
+           <form action="{{ route('check') }}" method="post">
              
-             @if(Session::get('fail'))
+             @if(session('unsuccesful'))
                <div class="alert alert-danger">
-                  {{ Session::get('fail') }}
+                  {{ session('unsuccesful') }}
                </div>
             @endif
   

@@ -32,10 +32,10 @@ class MainController extends Controller
         $save = $admin->save();
 
         if($save){
-            return back()->with('Success! User succesfully added');
+            return back()->with('success' ,'User succesfully added');
 
         }else{
-            return back()->with('Failed, something went wrong try again');
+            return back()->with('fail', 'something went wrong try again');
         }
 
     }
